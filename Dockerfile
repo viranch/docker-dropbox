@@ -18,5 +18,4 @@ EXPOSE 80
 
 # Define how to run the image
 ENV DATA_DIR_NAME=d
-ENTRYPOINT ["/opt/scripts/start.sh"]
-CMD ["/usr/sbin/apache2ctl", "-DFOREGROUND"]
+CMD ["/opt/scripts/start.sh"]

@@ -21,4 +21,14 @@ fi
 mkdir -p /data
 test -L /var/www/html/$DATA_DIR_NAME || ln -s /data /var/www/html/$DATA_DIR_NAME
 
-exec "$@"
+/usr/sbin/apache2ctl start
+
+finish () {
+    /usr/sbin/apache2ctl graceful-stop
+}
+
+trap finish TERM INT QUIT
+
+sleep infinity &
+
+wait $!
