@@ -2,8 +2,8 @@ name: Push to GHCR
 
 # Controls when the workflow will run
 on:
-  schedule:
-    - cron: '0 21 * * 4'
+  # schedule:
+  #   - cron: '0 21 * * 4'
   push:
     branches: [ master ]
   # Allows you to run this workflow manually from the Actions tab
